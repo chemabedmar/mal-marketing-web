@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CMO Interino para empresas que quieren crecer sin perder de vista a las personas. Más de 20 años en producto y marca. MalMarketing — Chema Bedmar.">
+  <meta name="author" content="Chema Bedmar">
+  <meta property="og:title" content="MalMarketing · Chema Bedmar — CMO Interino">
+  <meta property="og:description" content="Si buscas a alguien que automatice tu marketing, no soy tu persona. Marketing que empieza escuchando.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mal.marketing">
+  <title>MalMarketing · Chema Bedmar — CMO Interino</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:   #0A0A0A;
+      --red:     #D72638;
+      --red-dim: #8B1020;
+      --gray1:   #111111;
+      --gray2:   #1A1A1A;
+      --gray3:   #2C2C2C;
+      --gray4:   #555555;
+      --gray5:   #888888;
+      --gray6:   #BBBBBB;
+      --white:   #F5F5F0;
+      --font-head: 'Barlow Condensed', sans-serif;
+      --font-body: 'Barlow', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--red); color: #fff; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── UTILS ────────────────────────────────────────────────── */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+    .section-label {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.0;
+      letter-spacing: -1px;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .section-title em { color: var(--red); font-style: normal; }
+    .section-sub {
+      font-size: 16px;
+      color: var(--gray5);
+      line-height: 1.7;
+      max-width: 620px;
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--gray2);
+      border: none;
+    }
+    .tag {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 2px;
+      background: var(--red);
+      color: #fff;
+    }
+    .tag-outline {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 2px;
+      border: 1px solid var(--red);
+      color: var(--red);
+    }
+    .btn {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 3px;
+      cursor: pointer;
+      border: none;
+      transition: opacity .15s, transform .15s;
+    }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn-primary { background: var(--red); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--gray6); border: 1px solid var(--gray3); }
+    .btn-ghost:hover { border-color: var(--gray5); color: var(--white); }
+
+    /* ── NAV ──────────────────────────────────────────────────── */
+    #nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray2);
+      padding: 0 32px;
+    }
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+      color: var(--white);
+    }
+    .nav-logo span { color: var(--red); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gray5);
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta .btn { padding: 9px 20px; font-size: 12px; }
+    .nav-mobile-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+    .nav-mobile-btn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      transition: all .2s;
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      padding: 16px 32px 24px;
+      gap: 0;
+      border-top: 1px solid var(--gray2);
+      background: var(--black);
+    }
+    .mobile-menu a {
+      font-family: var(--font-head);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gray5);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray2);
+    }
+    .mobile-menu a:last-child { border: none; color: var(--red); }
+
+    /* ── HERO ─────────────────────────────────────────────────── */
+    #hero {
+      padding: 96px 0 80px;
+      border-bottom: 1px solid var(--gray2);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow-line {
+      width: 40px;
+      height: 2px;
+      background: var(--red);
+    }
+    .hero-eyebrow-text {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--red);
+      text-transform: uppercase;
+    }
+    .hero-headline {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      margin-bottom: 28px;
+    }
+    .hero-headline .line-white { color: var(--white); display: block; }
+    .hero-headline .line-red   { color: var(--red);   display: block; }
+    .hero-headline .line-dim   { color: var(--gray3);  display: block; }
+    .hero-copy {
+      font-size: 17px;
+      color: var(--gray5);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--gray2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .hero-stat {
+      padding: 18px 20px;
+      border-right: 1px solid var(--gray2);
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num {
+      font-family: var(--font-head);
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .hero-stat-label {
+      font-size: 12px;
+      color: var(--gray4);
+      line-height: 1.4;
+    }
+    /* Card lado derecho */
+    .hero-card {
+      background: var(--gray1);
+      border: 1px solid var(--gray2);
+      border-top: 3px solid var(--red);
+      border-radius: 6px;
+      padding: 28px 24px;
+    }
+    .hero-card-title {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-no-item {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray2);
+      font-size: 13px;
+      color: var(--gray4);
+      align-items: flex-start;
+    }
+    .hero-no-item:last-child { border-bottom: none; }
+    .hero-no-x { color: var(--red); font-weight: 700; font-size: 12px; min-width: 14px; margin-top: 2px; }
+    .hero-card-footer {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray2);
+      font-size: 12px;
+      color: var(--gray4);
+      line-height: 1.5;
+    }
+
+    /* ── SECTIONS SHARED ───────────────────────────────────────── */
+    .section { padding: 80px 0; border-bottom: 1px solid var(--gray2); }
+
+    /* ── SEÑALES DE ALARMA ─────────────────────────────────────── */
+    .signals-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray2);
+      border: 1px solid var(--gray2);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .signal-item {
+      background: var(--black);
+      padding: 24px 22px;
+      transition: background .2s;
+    }
+    .signal-item:hover { background: var(--gray1); }
+    .signal-num {
+      font-family: var(--font-head);
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--gray2);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .signal-text {
+      font-size: 14px;
+      color: var(--gray5);
+      line-height: 1.6;
+    }
+
+    /* ── PROCESO ──────────────────────────────────────────────── */
+    .process-track {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 48px;
+      position: relative;
+    }
+    .process-track::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: calc(16.66% + 16px);
+      right: calc(16.66% + 16px);
+      height: 1px;
+      background: var(--gray2);
+    }
+    .process-step {
+      padding: 0 24px 0 0;
+      position: relative;
+    }
+    .process-step:last-child { padding-right: 0; }
+    .process-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--red);
+      border: 2px solid var(--black);
+      box-shadow: 0 0 0 1px var(--red);
+      margin-bottom: 24px;
+    }
+    .process-week {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .process-title {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .process-body { font-size: 14px; color: var(--gray4); line-height: 1.6; }
+
+    /* ── COSTE REAL ─────────────────────────────────────────────── */
+    .cost-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .cost-card {
+      border-radius: 6px;
+      padding: 28px 24px;
+      border: 1px solid var(--gray2);
+    }
+    .cost-card.bad  { background: var(--gray1); border-top: 2px solid var(--gray3); }
+    .cost-card.good { background: #100005; border-top: 2px solid var(--red); }
+    .cost-type {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .cost-type.dim { color: var(--gray4); }
+    .cost-type.red { color: var(--red); }
+    .cost-price {
+      font-family: var(--font-head);
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .cost-card.bad  .cost-price { color: var(--gray5); }
+    .cost-card.good .cost-price { color: var(--white); }
+    .cost-period {
+      font-size: 12px;
+      color: var(--gray4);
+      margin-top: 4px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .cost-list { list-style: none; }
+    .cost-list li {
+      font-size: 13px;
+      color: var(--gray4);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--gray2);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .cost-list li:last-child { border-bottom: none; }
+    .cost-list li .ic { min-width: 14px; margin-top: 1px; font-size: 11px; }
+    .cost-list.good li .ic { color: var(--red); }
+    .cost-note {
+      margin-top: 20px;
+      background: #1a0005;
+      border: 1px solid var(--red-dim);
+      border-radius: 4px;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: var(--gray5);
+      line-height: 1.6;
+    }
+    .cost-note strong { color: var(--red); }
+
+    /* ── RESULTADOS ─────────────────────────────────────────────── */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray2);
+      border: 1px solid var(--gray2);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .result-item {
+      background: var(--black);
+      padding: 28px 24px;
+    }
+    .result-num {
+      font-family: var(--font-head);
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      letter-spacing: -2px;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .result-label {
+      font-size: 13px;
+      color: var(--gray4);
+      line-height: 1.5;
+    }
+    .quote-block {
+      margin-top: 32px;
+      border-left: 3px solid var(--red);
+      padding: 20px 24px;
+      background: var(--gray1);
+      border-radius: 0 4px 4px 0;
+    }
+    .quote-block p {
+      font-size: 15px;
+      color: var(--gray6);
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .quote-block cite {
+      font-size: 12px;
+      color: var(--gray4);
+      font-style: normal;
+      font-family: var(--font-head);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ── SERVICIOS ─────────────────────────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .service-card {
+      background: var(--gray1);
+      border: 1px solid var(--gray2);
+      border-top: 2px solid var(--red);
+      border-radius: 6px;
+      padding: 28px 24px;
+    }
+    .service-icon {
+      width: 36px;
+      height: 36px;
+      background: #1a0005;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .service-icon svg { width: 18px; height: 18px; stroke: var(--red); fill: none; stroke-width: 1.5; }
+    .service-title {
+      font-family: var(--font-head);
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .service-body {
+      font-size: 14px;
+      color: var(--gray4);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    .service-detail {
+      font-size: 12px;
+      color: var(--gray3);
+      font-family: var(--font-head);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-top: 1px solid var(--gray2);
+      padding-top: 14px;
+      margin-top: 4px;
+    }
+
+    /* ── 90 DÍAS ───────────────────────────────────────────────── */
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--gray2);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .days-col {
+      padding: 28px 22px;
+      border-right: 1px solid var(--gray2);
+    }
+    .days-col:last-child { border-right: none; }
+    .days-period {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .days-title {
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .days-item {
+      display: flex;
+      gap: 8px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--gray2);
+      font-size: 13px;
+      color: var(--gray4);
+      line-height: 1.4;
+    }
+    .days-item:last-child { border-bottom: none; }
+    .days-dot { color: var(--red); min-width: 8px; font-size: 10px; margin-top: 4px; }
+
+    /* ── SECTORES ──────────────────────────────────────────────── */
+    .sectors-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .sector {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 3px;
+      border: 1px solid var(--gray2);
+      color: var(--gray4);
+      transition: all .15s;
+    }
+    .sector.active {
+      border-color: var(--red);
+      color: var(--red);
+      background: #0d0005;
+    }
+    .sector-note {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--gray3);
+      font-style: italic;
+    }
+
+    /* ── CONTENIDO ─────────────────────────────────────────────── */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .post-card {
+      background: var(--gray1);
+      border: 1px solid var(--gray2);
+      border-radius: 6px;
+      padding: 20px;
+      transition: border-color .2s;
+      cursor: default;
+    }
+    .post-card:hover { border-color: var(--red); }
+    .post-tag {
+      font-family: var(--font-head);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .post-card p {
+      font-size: 14px;
+      color: var(--gray5);
+      line-height: 1.55;
+      font-style: italic;
+    }
+
+    /* ── FAQ ───────────────────────────────────────────────────── */
+    .faq-list { margin-top: 40px; }
+    .faq-item {
+      border-bottom: 1px solid var(--gray2);
+      overflow: hidden;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--gray2); }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .faq-question-text {
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border: 1px solid var(--gray3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red);
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 2px;
+      transition: transform .2s, background .2s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+    .faq-answer-inner {
+      padding-bottom: 20px;
+      font-size: 15px;
+      color: var(--gray4);
+      line-height: 1.7;
+      max-width: 720px;
+    }
+
+    /* ── CTA FINAL ─────────────────────────────────────────────── */
+    #cta {
+      padding: 96px 0;
+      text-align: center;
+      background: #0A0A0A;
+    }
+    .cta-label {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .cta-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .cta-title span { color: var(--red); display: block; }
+    .cta-sub {
+      font-size: 16px;
+      color: var(--gray4);
+      margin-bottom: 40px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .cta-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--gray3);
+    }
+    .cta-note a { color: var(--gray4); border-bottom: 1px solid var(--gray3); transition: color .15s; }
+    .cta-note a:hover { color: var(--white); }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
+    footer {
+      background: var(--gray1);
+      border-top: 1px solid var(--gray2);
+      padding: 32px;
+    }
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 18px;
+      color: var(--white);
+    }
+    .footer-logo span { color: var(--red); }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray4);
+      transition: color .15s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy {
+      font-size: 12px;
+      color: var(--gray3);
+    }
+
+    /* ── DECORATION ───────────────────────────────────────────── */
+    .red-line-v {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--red);
+    }
+    .noise-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.018;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      z-index: 9999;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .signals-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-track { grid-template-columns: 1fr; }
+      .process-track::before { display: none; }
+      .process-step { padding: 0 0 28px; border-bottom: 1px solid var(--gray2); }
+      .process-step:last-child { border-bottom: none; padding-bottom: 0; }
+      .cost-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .days-grid { grid-template-columns: 1fr; }
+      .days-col { border-right: none; border-bottom: 1px solid var(--gray2); }
+      .days-col:last-child { border-bottom: none; }
+      .posts-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      #nav { padding: 0 20px; }
+      .section { padding: 60px 0; }
+      #hero { padding: 60px 0 52px; }
+      .hero-stats { grid-template-columns: 1fr 1fr 1fr; }
+      .signals-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-mobile-btn { display: flex; }
+      footer { padding: 24px 20px; }
+      .footer-links { display: none; }
+    }
+
+    /* ── SCROLL ANIMATION ─────────────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- ── NAV ──────────────────────────────────────────────── -->
+<header id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">MAL<span>·MARKETING</span></a>
+    <ul class="nav-links">
+      <li><a href="#como-trabajo">Proceso</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#resultados">Resultados</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://calendly.com/" target="_blank" rel="noopener" class="btn btn-primary">Reservar llamada</a>
+    </div>
+    <button class="nav-mobile-btn" id="mobileToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#como-trabajo" class="mobile-link">Proceso</a>
+    <a href="#servicios" class="mobile-link">Servicios</a>
+    <a href="#resultados" class="mobile-link">Resultados</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="https://calendly.com/" target="_blank" rel="noopener">Reservar llamada →</a>
+  </nav>
+</header>
+
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<section id="hero">
+  <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--red);"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line"></div>
+          <span class="hero-eyebrow-text">Esto no es para ti</span>
+        </div>
+        <h1 class="hero-headline">
+          <span class="line-dim">Si buscas</span>
+          <span class="line-dim">a alguien que</span>
+          <span class="line-red">automatice</span>
+          <span class="line-white">tu marketing,</span>
+          <span class="line-dim">no soy tu</span>
+          <span class="line-white">persona.</span>
+        </h1>
+        <p class="hero-copy">
+          Llevo más de 20 años haciendo marketing que empieza escuchando, no publicando.
+          CMO interino para empresas que quieren crecer sin perder de vista a las personas.
+        </p>
+        <div class="hero-btns">
+          <a href="https://calendly.com/" target="_blank" rel="noopener" class="btn btn-primary">Hablemos — 30 min sin compromiso</a>
+          <a href="#como-trabajo" class="btn btn-ghost">Ver cómo trabajo ↓</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">+20</span>
+            <span class="hero-stat-label">años en producto y marca</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">5</span>
+            <span class="hero-stat-label">sectores con resultados</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">9</span>
+            <span class="hero-stat-label">años en Suavinex</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">Esto no es para ti si…</div>
+        <div class="hero-no-item"><span class="hero-no-x">✕</span><span>Solo quieres automatizar el trato con tus clientes</span></div>
+        <div class="hero-no-item"><span class="hero-no-x">✕</span><span>Buscas una agencia que ejecute sin opinar</span></div>
+        <div class="hero-no-item"><span class="hero-no-x">✕</span><span>Mides el éxito del marketing por likes, no por negocio</span></div>
+        <div class="hero-no-item"><span class="hero-no-x">✕</span><span>Confundes digitalización con estrategia</span></div>
+        <div class="hero-no-item"><span class="hero-no-x">✕</span><span>Ya tienes todo claro y solo necesitas manos</span></div>
+        <div class="hero-card-footer">
+          Si en cambio crees que el marketing es estrategia y que las personas importan más que los algoritmos, sigue leyendo.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SEÑALES DE ALARMA ─────────────────────────────────── -->
+<section class="section fade-up" id="senales">
+  <div class="container">
+    <span class="section-label">¿Te suena familiar?</span>
+    <h2 class="section-title">Señales de que tu empresa<br>necesita un CMO interino <em>ahora</em>.</h2>
+    <p class="section-sub">No hace falta estar en crisis. Estas situaciones son exactamente para las que existe este modelo.</p>
+    <div class="signals-grid">
+      <div class="signal-item">
+        <div class="signal-num">01</div>
+        <p class="signal-text">El CEO dedica más de 5 horas a la semana a coordinar marketing.</p>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num">02</div>
+        <p class="signal-text">Has cambiado de agencia dos veces en los últimos 18 meses.</p>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num">03</div>
+        <p class="signal-text">Tu equipo ejecuta bien pero nadie define la estrategia.</p>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num">04</div>
+        <p class="signal-text">Estás creciendo en ventas pero no sabes por qué ni cómo repetirlo.</p>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num">05</div>
+        <p class="signal-text">Lanzas campañas sin saber si funcionan antes de invertir más.</p>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num">06</div>
+        <p class="signal-text">Tu marketing y tus ventas van por caminos distintos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESO ──────────────────────────────────────────── -->
+<section class="section fade-up" id="como-trabajo">
+  <div class="container">
+    <span class="section-label">Cómo trabajo</span>
+    <h2 class="section-title">Sin onboarding interminable.<br><em>Resultados en 30 días.</em></h2>
+    <p class="section-sub">La mayoría de consultores tardan 3 meses en entregar el primer plan. Yo entro, escucho y tengo diagnóstico en una semana.</p>
+    <div class="process-track">
+      <div class="process-step">
+        <div class="process-dot"></div>
+        <div class="process-week">Semana 1</div>
+        <div class="process-title">Diagnóstico</div>
+        <p class="process-body">Escucho antes de tocar nada. Entrevisto al equipo, reviso lo que hay y entiendo qué está fallando de verdad y por qué. Sin suposiciones.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-dot"></div>
+        <div class="process-week">Mes 1</div>
+        <div class="process-title">Plan y prioridades</div>
+        <p class="process-body">Defino qué hacer, en qué orden y qué no hacer. Sin PowerPoint de 60 páginas. Un documento accionable con KPIs claros desde el primer día.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-dot"></div>
+        <div class="process-week">Mes 2–3+</div>
+        <div class="process-title">Ejecución y ajuste</div>
+        <p class="process-body">Ejecutamos. Medimos. Ajustamos. Esto no es un proyecto, es un proceso continuo de escucha, aprendizaje y adaptación permanente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COSTE REAL ───────────────────────────────────────── -->
+<section class="section fade-up" id="coste">
+  <div class="container">
+    <span class="section-label">El coste real</span>
+    <h2 class="section-title">Un CMO a tiempo completo<br>cuesta más de lo que crees.</h2>
+    <p class="section-sub">No es solo el salario. Son los seguros, el tiempo de reclutamiento, el período de adaptación y el coste de equivocarte de perfil.</p>
+    <div class="cost-grid">
+      <div class="cost-card bad">
+        <span class="cost-type dim">CMO a tiempo completo</span>
+        <div class="cost-price">70–100K€</div>
+        <span class="cost-period">al año + costes sociales</span>
+        <ul class="cost-list">
+          <li><span class="ic">—</span>6–9 meses para encontrar el perfil correcto</li>
+          <li><span class="ic">—</span>3–6 meses de adaptación antes de ser productivo</li>
+          <li><span class="ic">—</span>Si no funciona: rescisión + proceso de nuevo</li>
+          <li><span class="ic">—</span>Coste fijo aunque la empresa frene</li>
+          <li><span class="ic">—</span>Un solo punto de vista e industria</li>
+        </ul>
+      </div>
+      <div class="cost-card good">
+        <span class="cost-type red">CMO Interino · MalMarketing</span>
+        <div class="cost-price">Sin riesgo</div>
+        <span class="cost-period">de contratación fija</span>
+        <ul class="cost-list good">
+          <li><span class="ic">✓</span>Operativo y con diagnóstico en la primera semana</li>
+          <li><span class="ic">✓</span>Sin permanencia mínima obligatoria</li>
+          <li><span class="ic">✓</span>Si no funciona, lo digo antes que tú</li>
+          <li><span class="ic">✓</span>Escala exactamente según lo que necesitas</li>
+          <li><span class="ic">✓</span>+20 años de experiencia en 5 sectores distintos</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cost-note">
+      <strong>Los CEOs que trabajan con un CMO interino</strong> recuperan la inversión en los primeros 60–90 días, principalmente eliminando el tiempo que dedican ellos mismos a coordinar marketing.
+    </div>
+  </div>
+</section>
+
+<!-- ── RESULTADOS ───────────────────────────────────────── -->
+<section class="section fade-up" id="resultados">
+  <div class="container">
+    <span class="section-label">Resultados</span>
+    <h2 class="section-title">Números que puedo<br><em>defender en una reunión.</em></h2>
+    <p class="section-sub">20 años. Varias industrias. Casos reales. No casos de estudio de PowerPoint con logos grandes y datos pequeños.</p>
+    <div class="results-grid">
+      <div class="result-item">
+        <span class="result-num">+20</span>
+        <span class="result-label">años liderando estrategias de producto y marca en empresas reales</span>
+      </div>
+      <div class="result-item">
+        <span class="result-num">5</span>
+        <span class="result-label">sectores distintos con resultados documentados y medibles</span>
+      </div>
+      <div class="result-item">
+        <span class="result-num">9</span>
+        <span class="result-label">años en Suavinex liderando cosmética pediátrica · 3 premios nacionales</span>
+      </div>
+    </div>
+    <div class="quote-block">
+      <p>"Chema es un profesional del marketing profundamente orientado al cliente, con una sólida base analítica para la toma de decisiones y una capacidad destacada para detectar oportunidades de mercado y convertirlas en acciones reales y efectivas."</p>
+      <cite>— Reseña verificada en LinkedIn</cite>
+    </div>
+
+    <!-- Sectores -->
+    <div style="margin-top:52px;">
+      <span class="section-label">Experiencia sectorial</span>
+      <h3 class="section-title" style="font-size:clamp(24px,4vw,36px)">He trabajado en industrias<br>donde las personas importan.</h3>
+      <p class="section-sub" style="margin-bottom:0">No soy especialista de un solo sector. Eso es una ventaja: traigo perspectivas que tu competencia directa no tiene.</p>
+      <div class="sectors-wrap">
+        <div class="sector active">Cosmética y farmacia</div>
+        <div class="sector active">Gran consumo</div>
+        <div class="sector active">Interiorismo y hogar</div>
+        <div class="sector active">Tecnología de consumo</div>
+        <div class="sector active">Hostelería</div>
+        <div class="sector">Servicios B2B</div>
+        <div class="sector">Alimentación</div>
+        <div class="sector">Formación y educación</div>
+      </div>
+      <p class="sector-note">Los sectores destacados son los de experiencia directa con resultados documentados.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICIOS ────────────────────────────────────────── -->
+<section class="section fade-up" id="servicios">
+  <div class="container">
+    <span class="section-label">Servicios</span>
+    <h2 class="section-title">Dos formas de<br><em>trabajar juntos.</em></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        </div>
+        <div class="service-title">CMO Interino</div>
+        <p class="service-body">Dirección de marketing estratégico para empresas medianas. Entro, escucho, construyo el plan y lo ejecuto contigo. Sin agencia intermediaria. Sin PowerPoint sin acción detrás.</p>
+        <div class="service-detail">Lunes a jueves · Dedicación parcial o total · Mínimo 3 meses</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div class="service-title">Mentoring para juniors</div>
+        <p class="service-body">Grupos de máximo 5 personas. Todo mi conocimiento y mis herramientas para que aprendan a diferenciarse donde la IA no puede llegar: la conexión humana real con el cliente.</p>
+        <div class="service-detail">Viernes · Grupos cerrados · Convocatoria trimestral</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 90 DÍAS ───────────────────────────────────────────── -->
+<section class="section fade-up" id="noventa-dias">
+  <div class="container">
+    <span class="section-label">Qué esperar</span>
+    <h2 class="section-title">Los primeros 90 días<br><em>contigo.</em></h2>
+    <p class="section-sub">Sin sorpresas. Esto es lo que ocurre exactamente desde que empezamos a trabajar juntos.</p>
+    <div class="days-grid">
+      <div class="days-col">
+        <span class="days-period">Mes 1 — Escuchar</span>
+        <div class="days-title">Diagnóstico sin filtros</div>
+        <div class="days-item"><span class="days-dot">▸</span><span>Entrevistas con equipo, ventas y clientes actuales</span></div>
+        <div class="days-item"><span class="days-dot">▸</span><span>Auditoría completa de lo que hay hecho</span></div>
+        <div class="days-item"><span class="days-dot">▸</span><span>Análisis de competidores directos</span></div>
+        <div class="days-item"><span class="days-dot">▸</span><span>Diagnóstico escrito con prioridades claras</span></div>
+      </div>
+      <div class="days-col">
+        <span class="days-period">Mes 2 — Construir</span>
+        <div class="days-title">Plan y primeras acciones</div>
+        <div class="days-item"><span class="days-dot">▸</span><span>Estrategia de marca y posicionamiento</span></div>
+        <div class="days-item"><span class="days-dot">▸</span><span>Plan de canales y contenidos</span></div>
+        <div class="days-item"><span class="days-dot">▸</span><span>Quick wins identificados y ejecutados</span></div>
+        <div class="days-item"><span class="days-dot">▸</span><span>KPIs definidos y dashboard activo</span></div>
+      </div>
+      <div class="days-col">
+        <span class="days-period">Mes 3 — Escalar</span>
+        <div class="days-title">Tracción y ajuste</div>
+        <div class="days-item"><span class="days-dot">▸</span><span>Revisión de resultados vs. objetivos</span></div>
+        <div class="days-item"><span class="days-dot">▸</span><span>Ajuste de lo que no está funcionando</span></div>
+        <div class="days-item"><span class="days-dot">▸</span><span>Equipo interno más autónomo</span></div>
+        <div class="days-item"><span class="days-dot">▸</span><span>Decisión: continuar, escalar o transferir</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTENIDO / SERIE ─────────────────────────────────── -->
+<section class="section fade-up" id="contenido">
+  <div class="container">
+    <span class="tag" style="margin-bottom:20px;display:inline-block;">Esto no es para ti</span>
+    <h2 class="section-title" style="margin-top:8px">Píldoras de experiencia real.<br><em>Sin frameworks de manual.</em></h2>
+    <p class="section-sub">Cada publicación parte de algo que he vivido dentro de una empresa. Casos, errores, decisiones y lo que aprendí. Sígueme en LinkedIn.</p>
+    <div class="posts-grid">
+      <div class="post-card">
+        <span class="post-tag">Esto no es para ti</span>
+        <p>"Esto no es para ti si crees que el marketing se arregla con una herramienta."</p>
+      </div>
+      <div class="post-card">
+        <span class="post-tag">Esto no es para ti</span>
+        <p>"El peor consejo que le di a un junior fue: aprende a usar todas las herramientas."</p>
+      </div>
+      <div class="post-card">
+        <span class="post-tag">Esto no es para ti</span>
+        <p>"Tu empresa factura 3M€ y sigue sin director de marketing. Esto es lo que te está costando."</p>
+      </div>
+      <div class="post-card">
+        <span class="post-tag">Esto no es para ti</span>
+        <p>"Mercadona no tiene departamento de innovación. Tiene personas que escuchan."</p>
+      </div>
+    </div>
+    <div style="margin-top:24px;">
+      <a href="https://linkedin.com/in/chemabedmar" target="_blank" rel="noopener" class="btn btn-ghost">Ver todas las publicaciones en LinkedIn →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ──────────────────────────────────────────────── -->
+<section class="section fade-up" id="faq">
+  <div class="container">
+    <span class="section-label">Preguntas frecuentes</span>
+    <h2 class="section-title">Lo que me preguntan los CEOs<br><em>antes de llamar.</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Cuánto tiempo necesitas para saber si puedes ayudarnos?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Una hora de conversación honesta es suficiente para saber si tiene sentido trabajar juntos. En esa llamada no vendo nada. Pregunto, escucho y te digo lo que pienso. Si no lo tiene, te lo digo directamente y te ahorro el tiempo.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Puedes trabajar con el equipo de marketing que ya tenemos?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sí, y es lo habitual. Mi trabajo no es sustituir a tu equipo, es darle dirección y criterio. En la mayoría de casos, el equipo existente tiene más capacidad de la que se le permite usar. El problema no suele ser el equipo.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Ejecutas tú o solo das estrategia?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Las dos cosas, según lo que necesite la empresa. La estrategia sin ejecución es un PDF. Pero la ejecución sin estrategia es ruido. Mi trabajo es que las dos estén alineadas y que el equipo sepa exactamente qué hacer y por qué.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Trabajas con varias empresas a la vez?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sí, pero con un máximo claro. Trabajo de lunes a jueves con mis clientes. Nunca cojo más de lo que puedo atender con la dedicación que cada empresa merece. Cuando estoy lleno, lo digo. No hay sorpresas.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Qué pasa si después de 90 días no vemos resultados?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">El marketing no es inmediato, pero los primeros indicadores sí deberían moverse en los primeros 30–60 días. Si no los vemos, revisamos juntos qué está pasando. No tengo interés en cobrar por no avanzar. Si algo no funciona, lo cambio antes que tú.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Tienes experiencia en mi sector?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Depende del sector. Más arriba tienes los que conozco en profundidad. Si no es uno de ellos, no lo finjo. Lo que sí traigo siempre es el método: escuchar primero, datos después, hipótesis y test. Eso funciona en cualquier industria porque el comportamiento humano no cambia de sector en sector.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Trabajas solo o tienes un equipo detrás?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Trabajo solo, y eso es una ventaja. Cuando contratas a una agencia, quién habla contigo en la reunión no siempre es quien trabaja en tu cuenta. Conmigo siempre es igual: la misma persona que diagnostica es la que ejecuta y la que rinde cuentas.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA FINAL ─────────────────────────────────────────── -->
+<section id="cta">
+  <div class="container">
+    <span class="cta-label">¿Hablamos?</span>
+    <h2 class="cta-title">
+      30 minutos.<br>
+      <span>Sin PowerPoint.</span>
+    </h2>
+    <p class="cta-sub">
+      Si algo de lo que has leído resuena, hablemos. Sin compromiso, sin formulario largo y sin presentación de agencia. Solo una llamada para ver si tiene sentido trabajar juntos.
+    </p>
+    <div class="cta-buttons">
+      <a href="https://calendly.com/" target="_blank" rel="noopener" class="btn btn-primary">Reservar llamada →</a>
+      <a href="https://linkedin.com/in/chemabedmar" target="_blank" rel="noopener" class="btn btn-ghost">Escribirme en LinkedIn</a>
+    </div>
+    <p class="cta-note">
+      También puedes escribirme directamente a <a href="mailto:chemabedmar@gmail.com">chemabedmar@gmail.com</a>
+    </p>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">MAL<span>·MARKETING</span></div>
+    <ul class="footer-links">
+      <li><a href="#como-trabajo">Proceso</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#resultados">Resultados</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://linkedin.com/in/chemabedmar" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+    <p class="footer-copy">Chema Bedmar · Alicante · mal.marketing</p>
+  </div>
+</footer>
+
+<script>
+  // ── MOBILE MENU ─────────────────────────────────────────
+  const toggle = document.getElementById('mobileToggle');
+  const menu   = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    const open = menu.style.display === 'flex';
+    menu.style.display = open ? 'none' : 'flex';
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => { menu.style.display = 'none'; });
+  });
+
+  // ── FAQ ACCORDION ────────────────────────────────────────
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-answer').style.maxHeight = '0';
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // ── SCROLL FADE-IN ───────────────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── NAV ACTIVE SECTION ───────────────────────────────────
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.style.color = '');
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.style.color = 'var(--white)';
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => sectionObserver.observe(s));
+</script>
+</body>
+</html>
