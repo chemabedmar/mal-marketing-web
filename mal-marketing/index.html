@@ -307,46 +307,14 @@
       margin-bottom: 4px;
     }
     .hero-stat-label {
-      font-size: 12px;
-      color: var(--gray4);
-      line-height: 1.4;
+      font-family: var(--font-head);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      letter-spacing: 0.2px;
     }
     /* Card lado derecho */
-    .hero-card {
-      background: var(--gray1);
-      border: 1px solid var(--gray2);
-      border-top: 3px solid var(--red);
-      border-radius: 6px;
-      padding: 28px 24px;
-    }
-    .hero-card-title {
-      font-family: var(--font-head);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--red);
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .hero-no-item {
-      display: flex;
-      gap: 10px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--gray2);
-      font-size: 13px;
-      color: var(--gray4);
-      align-items: flex-start;
-    }
-    .hero-no-item:last-child { border-bottom: none; }
-    .hero-no-x { color: var(--red); font-weight: 700; font-size: 12px; min-width: 14px; margin-top: 2px; }
-    .hero-card-footer {
-      margin-top: 20px;
-      padding-top: 16px;
-      border-top: 1px solid var(--gray2);
-      font-size: 12px;
-      color: var(--gray4);
-      line-height: 1.5;
-    }
 
     /* ── SECTIONS SHARED ───────────────────────────────────────── */
     .section { padding: 80px 0; border-bottom: 1px solid var(--gray2); }
@@ -874,7 +842,6 @@
     /* ── RESPONSIVE ───────────────────────────────────────────── */
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
-      .hero-card { display: none; }
       .signals-grid { grid-template-columns: repeat(2, 1fr); }
       .process-track { grid-template-columns: 1fr; }
       .process-track::before { display: none; }
@@ -912,6 +879,49 @@
     .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+
+    /* ── HERO QUOTE ─────────────────────────────────────────── */
+    .hero-quote {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(20px, 2.8vw, 30px);
+      color: var(--white);
+      line-height: 1.25;
+      max-width: 560px;
+      margin-bottom: 20px;
+      letter-spacing: -0.3px;
+    }
+    /* ── HERO CAROUSEL ──────────────────────────────────────── */
+    #heroHeadline {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      min-height: 3.2em;
+    }
+    #heroHeadline.fade-out {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    #heroHeadline.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gray3);
+      transition: background 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+    .carousel-dot.active {
+      background: var(--red);
+      transform: scale(1.4);
     }
   </style>
 </head>
@@ -955,12 +965,9 @@
           <div class="hero-eyebrow-line"></div>
           <span class="hero-eyebrow-text">Esto no es para ti</span>
         </div>
-        <h1 class="hero-headline">
-          <span class="line-dim">Si tu marketing</span>
-          <span class="line-dim">no empieza por</span>
-          <span class="line-red">escuchar</span>
-          <span class="line-white">a las personas.</span>
-        </h1>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <h1 class="hero-headline" id="heroHeadline" aria-live="polite"></h1>
+        <p class="hero-quote">Si en cambio crees que el marketing es estrategia y que las personas importan más que los algoritmos, sigue leyendo.</p>
         <p class="hero-copy">
           Llevo más de 25 años haciendo marketing que empieza escuchando, no publicando.
           CMO interino para empresas que quieren crecer sin perder de vista a las personas.
@@ -984,17 +991,7 @@
           </div>
         </div>
       </div>
-      <div class="hero-card">
-        <div class="hero-card-title">Esto no es para ti si…</div>
-        <div class="hero-no-item"><span class="hero-no-x">✕</span><span>Solo quieres automatizar el trato con tus clientes</span></div>
-        <div class="hero-no-item"><span class="hero-no-x">✕</span><span>Buscas una agencia que ejecute sin opinar</span></div>
-        <div class="hero-no-item"><span class="hero-no-x">✕</span><span>Mides el éxito del marketing por likes, no por negocio</span></div>
-        <div class="hero-no-item"><span class="hero-no-x">✕</span><span>Confundes digitalización con estrategia</span></div>
-        <div class="hero-no-item"><span class="hero-no-x">✕</span><span>Ya tienes todo claro y solo necesitas manos</span></div>
-        <div class="hero-card-footer">
-          Si en cambio crees que el marketing es estrategia y que las personas importan más que los algoritmos, sigue leyendo.
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -1366,6 +1363,81 @@
     });
   }, { threshold: 0.4 });
   sections.forEach(s => sectionObserver.observe(s));
+
+  // ── HERO CAROUSEL ────────────────────────────────────────
+  const heroSlides = [
+    [
+      { text: 'Si diseñas la solución',  cls: 'line-dim' },
+      { text: 'antes de entender',       cls: 'line-dim' },
+      { text: 'la necesidad',            cls: 'line-red' },
+    ],
+    [
+      { text: 'Si tu marketing',         cls: 'line-dim' },
+      { text: 'no empieza por',          cls: 'line-dim' },
+      { text: 'escuchar',                cls: 'line-red' },
+    ],
+    [
+      { text: 'Si mides el éxito',       cls: 'line-dim' },
+      { text: 'en likes',                cls: 'line-dim' },
+      { text: 'y no en negocio',         cls: 'line-red' },
+    ],
+    [
+      { text: 'Si confundes',            cls: 'line-dim' },
+      { text: 'digitalización',          cls: 'line-dim' },
+      { text: 'con estrategia',          cls: 'line-red' },
+    ],
+    [
+      { text: 'Si buscas una agencia',   cls: 'line-dim' },
+      { text: 'que ejecute',             cls: 'line-dim' },
+      { text: 'sin opinar',              cls: 'line-red' },
+    ],
+  ];
+
+  const headline = document.getElementById('heroHeadline');
+  const dotsContainer = document.getElementById('carouselDots');
+  let currentSlide = 0;
+  let carouselTimer;
+
+  // Build dots
+  heroSlides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Frase ' + (i + 1));
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function renderSlide(index) {
+    const slide = heroSlides[index];
+    headline.innerHTML = slide.map(l =>
+      `<span class="${l.cls}">${l.text}</span>`
+    ).join('');
+  }
+
+  function goToSlide(index) {
+    clearInterval(carouselTimer);
+    headline.classList.add('fade-out');
+    setTimeout(() => {
+      currentSlide = index;
+      renderSlide(currentSlide);
+      // Update dots
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === currentSlide);
+      });
+      headline.classList.remove('fade-out');
+    }, 500);
+    carouselTimer = setInterval(nextSlide, 5000);
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % heroSlides.length);
+  }
+
+  // Init
+  renderSlide(0);
+  headline.classList.add('fade-in');
+  carouselTimer = setInterval(nextSlide, 5000);
+
 </script>
 </body>
 </html>
